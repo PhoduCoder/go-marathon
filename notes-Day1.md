@@ -4,7 +4,7 @@ Local only: go mod init helloapp
 
 Public repo: go mod init github.com/<user>/<repo>
 
-go mod init github.com/PhoduCoder/go-practice/go-marathon
+go mod init github.com/PhoduCoder/go-marathon
 ```
 
 Each folder is a package in Go and all the code within that folder/package
