@@ -6,8 +6,8 @@ import (
 
 func Fizzbuzz(n int) []string {
 
-	list := make([]string, n)
-	for i := 0; i < n; i++ {
+	list := make([]string, n+1)
+	for i := 0; i < n+1; i++ {
 		if i == 0 {
 			list[i] = "0"
 		} else if i%3 == 0 && i%5 == 0 {

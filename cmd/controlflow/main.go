@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	test := controlflow.Fizzbuzz(43)
+	test := controlflow.Fizzbuzz(30)
 	fmt.Printf("Test is %v", test)
 }
