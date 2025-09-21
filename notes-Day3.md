@@ -1,7 +1,7 @@
 Notes about testing
 
 Three RULES 
-[ unit tests file naming convention]
+[ unit tests file naming convention] [ File must end with _test.go]
 [ Unit test function name has to start with Test capitalized T]
 [Unit test function signature ]
 
@@ -9,6 +9,7 @@ For whitebox unit tests, the following rules hold
 a) The file must be named origfile_test.go. As an example
 say your logic had control.go,  so your test file name becomes 
 control_test.go
+brakes_test.go also work. But it has to end with _test.go
 
 b) The function must start with Testwhatever
 So func signature must be like 
