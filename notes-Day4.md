@@ -50,6 +50,8 @@ being passed as ARGUMENT to a function is unknown
 One can use multiple argument types in a function that uses variadic param,
 but the variadic param must be the last in the function argument 
 
+It is very similar to *args in Python 
+
 Eg,
 
 ```
