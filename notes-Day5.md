@@ -15,3 +15,8 @@ func main() {
   f()
 }
 ```
+
+Closures
+
+Anonymous functions have access to variables which are at the level of the function declaration. 
+This can be used to implement scenarios like closures in Go

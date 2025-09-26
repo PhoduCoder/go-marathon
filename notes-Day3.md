@@ -17,9 +17,11 @@ So func signature must be like
 func Testcontrol(t *testing.T) {}
 ```
 
+
 c) this function doesn't return anything, only contains t *testing.T as 
 the argument 
-======
+
+------------
 
 Notes about declaring list of strings 
 
