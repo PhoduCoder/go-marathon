@@ -4,7 +4,7 @@ Instead errors are treated as values, returned by functions and they should be h
 
 Say if a function returns a division value, 
 it will return two values - a) Value obtained after division
-b) Error, which will be nil in all other cases, except for the case in which the divisor is 0 
+b) Error, which will be **nil** in all other cases, except for the case in which the divisor is 0 
 
 
 Error is actually and interface which can be implemented 
