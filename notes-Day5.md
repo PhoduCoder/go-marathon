@@ -49,7 +49,7 @@ How do we do that?
 We can follow the below steps
 
 ------------
-
+CLOSURE IMPLEMENTATION STEPS - ENCAPSULATE A VARIABLE , KEEP PRIVATE STATE AND THEN EXPOSE OPERATIONS ON IT 
 1. We can define a function in Go. def abc func() int //abc is a function 
 2. That function returns an anonymous function // abc returns an anonymous function, the anonymous function returns an integer
 3. This function declares a variable(protected data) and the anonymous function gains access to it since it is defined at the same level as anonymous function definition. 
