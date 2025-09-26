@@ -72,3 +72,33 @@ func incrementor() func() int {
   }
 }
 ```
+
+Same concept as above but passing a struct instead of int 
+
+```
+package main
+
+import "fmt"
+
+type Counter struct {
+	Value int
+}
+
+func main() {
+	dec := newDecrementor(10, 2) // start=10, step=2
+
+	fmt.Println(dec()) // {8}
+	fmt.Println(dec()) // {6}
+	fmt.Println(dec()) // {4}
+	fmt.Println(dec()) // {2}
+}
+
+// returns a function (closure) that decrements and returns a struct snapshot
+func newDecrementor(start, step int) func() Counter {
+	c := Counter{Value: start}
+	return func() Counter {
+		c.Value -= step // mutate captured state
+		return c        // return updated struct (by value)
+	}
+}
+```
