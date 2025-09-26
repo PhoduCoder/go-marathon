@@ -52,6 +52,7 @@ We can follow the below steps
 
 1. We can define a function in Go. def abc func() int //abc is a function 
 2. That function returns an anonymous function // abc returns an anonymous function, the anonymous function returns an integer
+3. This function declares a variable(protected data) and the anonymous function gains access to it since it is defined at the same level as anonymous function definition. 
 3. We assign the variable to the function defined in Step 1 // var1 := abc
 4. Since the function returns an anonymous function, so essentially the var1 becomes an anonymous function
 5. Now everytime we call the variable() like `var1()`, we are calling the anonymous function
