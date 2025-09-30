@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Printf("The returned reversed slice is %v\n", rev)
 
-	fmt.Printf("The maximum number in original slice is %d\n", slices.Max(num_list))
+	fmt.Printf("The maximum number in original slice is %d\n", slices.AvoidMax(num_list))
 
 	fmt.Printf("The maximum number in original slice via idiomatic Go is %d\n", slices.IdiomaticMax(new_list))
 
