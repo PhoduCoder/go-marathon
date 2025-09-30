@@ -13,6 +13,9 @@ func Reverse(x []int) []int {
 	return rev
 }
 
+// This is poor since
+// you already got the value that you threw away
+// and then used the slice lookup again, which was not necessary
 func Max(x []int) int {
 	max := x[0]
 	for i, _ := range x {
