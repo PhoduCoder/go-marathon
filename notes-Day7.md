@@ -1,4 +1,5 @@
-## Slice Comparison in Go
+##
+Slice Comparison in Go
 When comparing slices , `==` and `!=` operator are not valid
 
 The comparison of slices can only occur when comparing the entire slice to nil.
@@ -9,7 +10,8 @@ Use the reflect package, this provides a DeepCopy() function.
 
 so using `reflect.DeepCopy(slice1, slice2)` can be used to compare
 
-##Range function for Slice
+##
+Range function for Slice
 
 ```
 z := []int{100,200,300,500}
@@ -32,7 +34,8 @@ Outputs
 4 65 [Unicode for 'A']
 5 118 ['v']
 
-###DataTypes for Range function
+###
+DataTypes for Range function
 Basically range function works for 
 slices [Gives index and value]
 Strings [Gives index and rune]
