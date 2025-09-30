@@ -38,3 +38,7 @@ slices [Gives index and value]
 Strings [Gives index and rune]
 Maps [Gives key and value]
 Channels [Gives value(one at a time until channel is closed)]
+
+#
+Order of index is guaranteed in slices and strings
+But not guaranteed in maps
