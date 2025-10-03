@@ -13,4 +13,12 @@ func main() {
 	users[5] = "Swapnil"
 	fmt.Println("After modification users map", users)
 
+	user7, err := (users[7])
+	fmt.Printf("Does User7 exist ,decision is %v, it was supposed to be %s\n", err, user7)
+
+	users[7] = "Sonal"
+	user7, err = (users[7])
+	fmt.Printf("Does User7 exist ,decision is %v, it was supposed to be %s\n", err, user7)
+	fmt.Println("After modification users map", users)
+
 }
