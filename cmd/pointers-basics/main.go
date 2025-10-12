@@ -15,7 +15,7 @@ func main() {
 	fmt.Println(a, b)
 
 	fmt.Println("Calling increment function")
-	increment(a, b)
+	incrementInt(a, b)
 	fmt.Println("Calling a and b in main after increment function")
 	fmt.Println(a, b)
 
@@ -45,7 +45,7 @@ func incrementviaPointer(m, n *int) {
 
 }
 
-func increment(x, y int) {
+func incrementInt(x, y int) {
 	fmt.Println("Printing passed values")
 	fmt.Println(x, y)
 	x += 1
