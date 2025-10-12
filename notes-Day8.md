@@ -2,7 +2,7 @@
 
 ## Using substring
 You can generally use a Split function from the strings package
-Note that this function splits on a substring and NOT rune 
+Note that this function splits on a substring and NOT rune - equivalent of char in GO 
 
 ```
 words := strings.Split(lower_str, " ") //returns a slice of strings

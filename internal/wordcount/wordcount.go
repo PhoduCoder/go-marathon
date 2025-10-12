@@ -28,7 +28,7 @@ func WordCount(str string) map[string]int {
 		//from 29-34 in one line `m[word]++`
 		val, ok := m[word]
 		if !ok {
-			m[word] = 1 //When key doesn't exist in map, then assign a value of 1
+			m[word] = 1 //When key doesn't exist in map, because ok will return false,  then assign a value of 1
 		} else {
 			m[word] = val + 1 //When key exist then increment that value
 		}
