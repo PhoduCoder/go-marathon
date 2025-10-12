@@ -10,6 +10,9 @@ func Wordcount(sent string) map[string]int {
 	//Separate sentence by spaces and punctuation marks
 	words := strings.FieldsFunc(sent, separator) //returns []string
 
+	//Pay attention that instead of declaring the separator function separately,
+	// you can also declare it inline as an anonymous function
+
 	fmt.Println(words)
 
 	fmt.Println(len(words))
