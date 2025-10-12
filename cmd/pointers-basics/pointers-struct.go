@@ -19,7 +19,7 @@ func main() {
 	fmt.Printf("Salary after increment without pointers is %f\n", p1.Salary)
 	//Here we pass a pointer
 	incrementSalary(&p1)
-	fmt.Printf("Salary after increment is %f", p1.Salary)
+	fmt.Printf("Salary after increment is %f\n", p1.Salary)
 }
 
 func incrementSalary(p *Person) {
