@@ -164,3 +164,17 @@ func main() {
     fmt.Println(nums)      // [1 2 3 4]
 }
 ```
+
+## Maps
+When dealing with maps, you will almost NEVER use pointers 
+When a main function defines a map 
+and the called function modifies the map
+they are modifying the same map, there is no COPY of map that is being passed
+unlike struct or int etc. 
+
+This is because of the way maps are implemented,
+A Go map is a reference type
+Its variable is a small structure to handle the 
+map's internal data 
+
+When you pass a map to a function, Go copies the handle (small struct), but the handle still points to the same hash table.
