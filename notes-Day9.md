@@ -81,3 +81,27 @@ func Add(s *[]int, x int) {
 nums := []int{1, 2, 3}
 Add(&nums, 4)
 ```
+
+also use the pointer receiver when using structs 
+
+```
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p *Person) Birthday() {
+    p.Age++ // modifies the original
+}
+
+person := Person{"Alice", 30}
+person.Birthday()
+fmt.Println(person.Age) // 31
+```
+
+If the method doesn't modify the struct, then one can use the value receiver instead
+```
+func (p Person) Greet() {
+    fmt.Println("Hello,", p.Name)
+}
+```
