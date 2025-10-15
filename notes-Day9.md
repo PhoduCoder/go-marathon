@@ -57,3 +57,27 @@ func main() {
 }
 
 ```
+
+It is idiomatic to use a pointer receiver for a method that modifies a slice.
+
+```
+type Ints []int
+
+func (s *Ints) Add(x int) {
+    *s = append(*s, x)
+}
+
+nums := Ints{1, 2, 3}
+nums.Add(4)
+```
+
+Instead of 
+
+```
+func Add(s *[]int, x int) {
+    *s = append(*s, x)
+}
+
+nums := []int{1, 2, 3}
+Add(&nums, 4)
+```
