@@ -105,3 +105,62 @@ func (p Person) Greet() {
     fmt.Println("Hello,", p.Name)
 }
 ```
+
+Also keep in mind that when defining the pointer receiver over a struct 
+calling changes 
+
+```
+type Person struct {
+    Name string
+    Age  int
+}
+
+func (p *Person) Birthday() {
+    p.Age++
+}
+
+func main() {
+    person := Person{"Alice", 30}
+
+    person.Birthday()  // ✅ works, even though receiver is *Person
+    (&person).Birthday() // also works explicitly
+
+    fmt.Println(person.Age) // 31
+}
+```
+
+## Calling the function when using slices and pointer receiver
+
+```
+
+type Ints []int
+
+func (s *Ints) Add(x int) {
+    *s = append(*s, x)  // modify the original slice
+}
+
+
+func main() {
+    nums := Ints{1, 2, 3}
+
+    nums.Add(4)      // ✅ works, Go automatically takes the address
+    (&nums).Add(5)   // also works explicitly
+
+    fmt.Println(nums) // [1 2 3 4 5]
+}
+
+```
+
+Contrasting this with a function not using pointer receiver 
+
+```
+func AddElement(s *[]int, x int) {
+    *s = append(*s, x)
+}
+
+func main() {
+    nums := []int{1, 2, 3}
+    AddElement(&nums, 4)  // must pass &nums
+    fmt.Println(nums)      // [1 2 3 4]
+}
+```
