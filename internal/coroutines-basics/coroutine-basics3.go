@@ -15,10 +15,10 @@ func main() {
 	wg.Add(3) //Manager thinks i am waiting for three coroutine to finish, puts counter as 3
 
 	for i := 0; i < 3; i++ {
-		go func() {
+		go func(i int) {
 			defer wg.Done() //worker says i am doneThe coroutine finishes reducing counter by 1
-			fmt.Println("=================Starting Anonymous coroutine=============")
-		}()
+			fmt.Printf("=================Starting Anonymous coroutine %d =============\n", i)
+		}(i)
 	}
 	//Forking from the main coroutine
 
