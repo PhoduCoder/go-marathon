@@ -6,5 +6,21 @@ That is one function can be implemented in various ways for various types
 
 ===========
 
+Capitalization Notes 
+Yes — capitalization affects all identifiers in Go:
+
+Variables
+
+Constants
+
+Structs
+
+Functions
+
+Methods
+
+Interfaces
+
+Fields inside structs
 
 
