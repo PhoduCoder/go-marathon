@@ -178,3 +178,13 @@ Its variable is a small structure to handle the
 map's internal data 
 
 When you pass a map to a function, Go copies the handle (small struct), but the handle still points to the same hash table.
+
+862
+
+385 
+
+3629
+
+garciacruzyamilet
+
+gmail
