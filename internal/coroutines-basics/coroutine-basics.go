@@ -10,10 +10,10 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	wg.Add(1)
+	wg.Add(1) //Adding a counter with the number of coroutines
 
 	go func() {
-		//defer wg.Done()
+		defer wg.Done()
 		fmt.Println("=================Starting Anonymous coroutine=============")
 	}() //Forking from the main coroutine
 
