@@ -58,3 +58,10 @@ Executing 1, greetings, Executing 0 and  hello
 
 This is because Each goroutine does two separate prints (Printf then Println).
 The goroutine can be preempted between those calls, so other goroutines run and print in between — causing the mixed output order you observed.
+
+***
+The runtime can preempt a running goroutine and run another one whenever it reaches a safe point (function calls, certain loop backedges, syscalls, I/O, runtime checks).
+***
+
+Modern Go (1.14+) can preempt more aggressively (even inside long-running functions), so never assume a goroutine will run to completion without interruption unless you explicitly synchronize it.
+
