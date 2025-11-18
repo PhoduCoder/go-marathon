@@ -14,13 +14,15 @@ func main() {
 		return s.Sys
 	}
 
+	//This will cause coroutines to be there infinitely
 	var c <-chan interface{}
 	var wg sync.WaitGroup
 	noop := func() { wg.Done(); <-c }
 
-	const numGoroutines = 1e6
+	const numGoroutines = 1e4
 	wg.Add(numGoroutines)
 	before := memConsumed()
+	//Creating abnormally high number of coroutines
 	for i := numGoroutines; i > 0; i-- {
 		go noop()
 	}
