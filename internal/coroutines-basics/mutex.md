@@ -26,3 +26,24 @@ The mutex protects only the code that actually uses it.
 
 =====
 so say coroutine1 acquiures a lock and then modify a global vvariable age, another coroutine doesn't acqire the mutex, but just tries updating age , it will still be able to. If another coroutine also agrees to be a good citixen by using lock unlock,, then that coroutine won't be able to get that lock during which the previous service is unlocked,, buut canmake the changes afterwards
+
+=====
+So with cond, the waiting and the signaling coroutine MUST use the same mutex 
+So when the coroutine with cond.wait is called, mutex is unlocked
+now this enables the mutex to be acquired by the other coroutine 
+and then when cond.signal is done , then?
+
+=====
+Step-by-step:
+
+Waiter acquires mutex → sits in the chair.
+
+Waiter calls Wait() → releases mutex (stands up) and sleeps.
+
+Signaler acquires mutex → sits, signals the waiter.
+
+Signaler releases mutex → leaves the chair.
+
+Waiter wakes up, reacquires mutex (sits again) → continues safely.
+
+Waiter eventually releases mutex → leaves chair.
