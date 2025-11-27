@@ -24,6 +24,14 @@ Another goroutine can bypass the mutex and touch the variable, but doing so brea
 
 The mutex protects only the code that actually uses it.
 
+
+The mutex protects the entire system only if all goroutines cooperate.
+This is like traffic lights:
+A red light doesn’t physically block your car.
+It works only if everyone follows it.
+If someone runs the red light, the system breaks.
+Mutexes are exactly this: cooperative concurrency control.
+
 =====
 so say coroutine1 acquiures a lock and then modify a global vvariable age, another coroutine doesn't acqire the mutex, but just tries updating age , it will still be able to. If another coroutine also agrees to be a good citixen by using lock unlock,, then that coroutine won't be able to get that lock during which the previous service is unlocked,, buut canmake the changes afterwards
 
