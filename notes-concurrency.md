@@ -10,3 +10,8 @@ The CPU is already fast.
 By splitting tasks into multiple independent goroutines, you let the CPU keep working on other tasks while some are waiting (I/O, sleep, etc.).
 
 This leverages the CPU’s speed more efficiently without changing the CPU itself.
+
+For waitgroups 
+You never pass waitgroups around in functions 
+rather pointers to waitgroups
+
