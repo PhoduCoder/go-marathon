@@ -56,3 +56,13 @@ func main() {
 // G1 reads 10 → increments to 11
 // G2 reads 10 → decrements to 9
 // Final value = 9 or 11 (never 10)
+
+// counter++ is three operations:
+
+// Load from memory
+
+// Add 1
+
+// Store back to memory
+
+// A mutex makes those 3 steps atomic as a unit.
