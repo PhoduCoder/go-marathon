@@ -1,3 +1,6 @@
+//This is a single coroutine
+// Objective is to show that how a single coroutine takes 5 seconds to complete
+
 package main
 
 import (

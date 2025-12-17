@@ -1,3 +1,7 @@
+//This is to add to the concept of coroutines
+//but here we are sharing variables between coroutines
+//This is a classic example of sharing data between corroutines
+
 package main
 
 import (
