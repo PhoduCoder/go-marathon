@@ -1,3 +1,9 @@
+//Both these programs don't use mutex and still
+// try to update a shared resource
+// This is a classic case of data race
+
+// One can check it by running `go run -race non-mutex-inc-dec.go`
+
 package main
 
 import (
