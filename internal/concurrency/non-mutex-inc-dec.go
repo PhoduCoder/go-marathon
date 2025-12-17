@@ -44,3 +44,15 @@ func main() {
 	fmt.Println("===========**********============")
 
 }
+
+//Important Note
+// While running the code locally may feel like
+// there is no data race, this can go wrong at scale
+
+//Also it can lead to inconsistent results
+// since coroutines run non-deterministic fashion
+
+//counter = 10
+// G1 reads 10 → increments to 11
+// G2 reads 10 → decrements to 9
+// Final value = 9 or 11 (never 10)
