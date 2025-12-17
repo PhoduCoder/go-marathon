@@ -16,6 +16,7 @@ var wg sync.WaitGroup
 func updateMsg(s string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	msg = s
+	fmt.Println("Changed the value to ", msg)
 }
 
 func main() {
@@ -28,7 +29,7 @@ func main() {
 	go updateMsg("Hello AlienInvader18!", &wg)
 
 	wg.Wait()
-	fmt.Println(msg)
+	fmt.Println("Coming from main", msg)
 
 	fmt.Println("Ending main coroutine")
 

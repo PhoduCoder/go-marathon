@@ -21,7 +21,6 @@ func main() {
 		wg.Add(1)         //This is like incrementing the counter
 		go heavyTask(&wg) // Starts a coroutine - Pay attention to go keyword
 		//wg is passed to make sure that the coroutine can call wg.Done()
-
 	}
 	wg.Wait() // This is the main coroutine waiting for all coroutines to finish
 	fmt.Println("Total time: ", time.Since(start))
