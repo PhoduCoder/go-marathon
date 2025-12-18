@@ -33,10 +33,18 @@ func main() {
 
 	fmt.Println("Initial Value of counter is", counter)
 
-	wg.Add(3)
-	go decrement(&counter, &wg)
-	go increment(&counter, &wg)
-	go increment(&counter, &wg)
+	for i := 0; i < 1000; i++ {
+		wg.Add(1)
+		if (i % 3) == 0 {
+			go decrement(&counter, &wg)
+		} else {
+			go increment(&counter, &wg)
+		}
+	}
+	// wg.Add(3)
+	// go decrement(&counter, &wg)
+	// go increment(&counter, &wg)
+	// go increment(&counter, &wg)
 
 	wg.Wait()
 
