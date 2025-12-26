@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
 )
 
 var wg sync.WaitGroup
@@ -30,6 +31,8 @@ func decrement(counter *int, wg *sync.WaitGroup) {
 
 func main() {
 
+	start := time.Now()
+
 	fmt.Println("Initial Value of counter is", counter)
 
 	for i := 0; i < 1000; i++ {
@@ -48,6 +51,7 @@ func main() {
 	wg.Wait()
 
 	fmt.Println("Final value of counter is", counter)
+	fmt.Println("Total time: ", time.Since(start))
 	fmt.Println("===========**********============")
 
 }
