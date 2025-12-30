@@ -25,7 +25,7 @@ func main() {
 
 	msg, ok := <-stream
 
-	fmt.Println("Values are ", msg, ok)
+	fmt.Println("Values are ", msg, ok) // Value changes to false. since channel is closed
 
 	//fmt.Println(<-stream)
 	wg.Wait()
