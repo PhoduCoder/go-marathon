@@ -16,3 +16,16 @@ All the above are encapsulated and exposed via a reader channel
 
 ## chan-design1.go has the implementation
 
+## READING FROM CHANNEL 
+
+There are three ways to deal with blocking at the receive end 
+a) Accept the blocking [what we did it chan-design1.go]
+In this case, the reader is blocking until the sender sends value to channel
+or closes the channel
+
+b) Bound blocking by using select 
+
+c) Third is cancellation with context
+
+
+
