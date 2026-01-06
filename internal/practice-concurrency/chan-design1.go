@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 
@@ -14,8 +17,9 @@ func main() {
 		//Coroutine that writes to the channel
 		go func() {
 			defer close(ch)
-			for i := 10; i < 12; i++ {
+			for i := 10; i < 14; i++ {
 				//Writing to the channel
+				time.Sleep(5 * time.Second)
 				ch <- i
 			}
 		}()
@@ -26,6 +30,7 @@ func main() {
 	// is exposed via a reader channel, it is an unidirectional channel
 	channel_reader := channel_var()
 
+	fmt.Println("Reading from channel")
 	for j := range channel_reader {
 		fmt.Println(j)
 	}
