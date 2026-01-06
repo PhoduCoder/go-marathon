@@ -14,12 +14,12 @@ func main() {
 		//Coroutine that writes to the channel
 		go func() {
 			defer close(ch)
-			for i := 10; i < 15; i++ {
+			for i := 10; i < 12; i++ {
 				//Writing to the channel
 				ch <- i
 			}
 		}()
-		return ch
+		return ch // we return a channel that is populated async by a goroutine
 	}
 
 	// all of initialize the channel, write to channel & close the channel
