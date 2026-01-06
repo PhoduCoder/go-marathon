@@ -31,29 +31,26 @@ for _, s := range []string{"hello","greetings","good day"} {
 */
 
 /*
-OUTPUT 
+OUTPUT
 
 ======
-xecuting 2 
+xecuting 2
 good day
-Executing 1 
-Executing 0 
+Executing 1
+Executing 0
 greetings
 hello
-(base) MacBookPro:go-marathon alieninvader$ go run internal/coroutines-basics/coroutines-trick.go 
-Executing 2 
+(base) MacBookPro:go-marathon alieninvader$ go run internal/coroutines-basics/coroutines-trick.go
+Executing 2
 good day
-Executing 1 
-Executing 0 
+Executing 1
+Executing 0
 hello
 greetings
 ==========
-*/
-
-/*
-If you notice the output, you will realise that go coroutines 1 and 0 were 
-preempted by the Go runtime and hence the output appeared as 
-Executing 1, Executing 0, hello and greetings instead of 
+If you notice the output, you will realise that go coroutines 1 and 0 were
+preempted by the Go runtime and hence the output appeared as
+Executing 1, Executing 0, hello and greetings instead of
 Executing 1, greetings, Executing 0 and  hello
 
 This is because Each goroutine does two separate prints (Printf then Println).
@@ -65,3 +62,4 @@ The runtime can preempt a running goroutine and run another one whenever it reac
 
 Modern Go (1.14+) can preempt more aggressively (even inside long-running functions), so never assume a goroutine will run to completion without interruption unless you explicitly synchronize it.
 
+*/

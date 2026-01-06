@@ -20,3 +20,15 @@ if x%3 == 0 {
     fmt.Println("Buzz")
 }
 ```
+
+This is the only valid way for #else if and #else
+
+```
+if cond {
+} else {
+}
+
+if cond {
+} else if other {
+}
+```

@@ -17,6 +17,7 @@ func main() {
 		for i := 0; i < 5; i++ {
 			fmt.Fprintf(&stdoutBuff, "Sending: %d\n", i)
 			intStream <- i
+			fmt.Fprintf(&stdoutBuff, "SENT!!: %d\n", i)
 		}
 	}()
 
