@@ -1,0 +1,21 @@
+Solve this question on: ssh cks4024
+
+Team White created an ImagePolicyWebhook solution at /opt/course/12/webhook on cks4024 which needs to be enabled for the cluster. There is an existing and working webhook-backend Service in Namespace team-white which will be the ImagePolicyWebhook backend.
+
+Create an AdmissionConfiguration at /opt/course/12/webhook/admission-config.yaml which contains the following ImagePolicyWebhook configuration in the same file:
+
+imagePolicy:
+  kubeConfigFile: /etc/kubernetes/webhook/webhook.yaml
+  allowTTL: 10
+  denyTTL: 10
+  retryBackoff: 20
+  defaultAllow: true
+Configure the apiserver to:
+
+Mount /opt/course/12/webhook at /etc/kubernetes/webhook
+
+Use the AdmissionConfiguration at path /etc/kubernetes/webhook/admission-config.yaml
+
+Enable the ImagePolicyWebhook admission plugin
+
+As result the ImagePolicyWebhook backend should prevent container images containing danger-danger from being used, any other image should still work.
