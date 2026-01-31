@@ -3,6 +3,12 @@
 //BUT YOU CAN'T DEFINE A METHOD FOR AN INTERFACE
 // like func (h Human)speakAge(){}
 
+// SO basically a function that can take many different types
+// and can change it behavior based on what it takes
+
+// LIKE makeSound function
+// Can take different animal types and make different noises
+
 package main
 
 import "fmt"
