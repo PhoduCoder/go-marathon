@@ -26,3 +26,9 @@ Connection is a type that implements write and read methods which takes a slice 
 Since it implements read and write methods, it implements Reader and Writer Interface
 
 So every function which takes a reader or a writer, one can use conn
+
+
+# Run the program
+go run tcp-server.go
+On other terminal, run 
+telnet localhost 8080
