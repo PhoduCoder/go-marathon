@@ -36,6 +36,21 @@ func handle(conn net.Conn) {
 	for scanner.Scan() {
 		line := scanner.Text()
 		fmt.Println(line)
+		//NOTE that fmt.Printf(conn, "your string") WONT work, since fmt.Printf takes a string and not io.Reader()
+		//fmt.Fprintf(conn, "Reply from the server, we got your request and are working on it\n")
+
+		// The above doesn't render in browser
+
+		//to render this in browser, let's convert string to HTML
+		html := "<!doctype html><html><body>Hello from server again</body></html>"
+
+		fmt.Fprint(conn, "HTTP/1.1 200 OK\r\n")
+		fmt.Fprint(conn, "Content-Type: text/html; charset=utf-8\r\n")
+		fmt.Fprintf(conn, "Content-Length: %d\r\n", len(html))
+		fmt.Fprint(conn, "Connection: close\r\n")
+		fmt.Fprint(conn, "\r\n") // end of headers
+		fmt.Fprint(conn, html)
+
 		if line == "" {
 			break
 		}
