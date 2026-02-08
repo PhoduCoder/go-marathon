@@ -33,6 +33,13 @@ func (p Person) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 		fmt.Println("Form is", key, val)
 	}
 
+	//Getting form value for a field say `name`
+	name := req.FormValue("name")
+	fmt.Printf("Name passed is", name)
+
 	fmt.Fprintf(resp, "Writing person age here")
 
 }
+
+//CURL REQUEST
+//curl http://localhost:8080?name=shreya -H "mykey:myvalue" -d "name":"gaurav" -d "key":"value"
