@@ -12,7 +12,7 @@ func main() {
 	http.HandleFunc("/cat", c) //Instead of mux.Handle()
 	http.HandleFunc("/dog", d)
 
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":80", nil) //default serveMux
 
 }
 
