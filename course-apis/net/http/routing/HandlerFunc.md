@@ -118,3 +118,50 @@ func main() {
 }
 
 ```
+
+When you should prefer structs
+
+Use a struct handler when:
+
+you have multiple methods / richer behavior
+
+you have non-trivial shared state (db, caches, config)
+
+you want a named type for clarity/testing
+
+Use HandlerFunc when:
+
+handler is small
+
+you’re writing middleware/wrappers
+
+you want quick composition
+
+So it’s not “instead of structs”. It’s an ergonomic tool so you don’t have to create a new struct type every time you want “a handler”.
+
+********
+********
+
+BIGGEST TAKE AWAY 
+
+you do NOT need to create your own function type as stated above. 
+the standard library has already done that for you.
+
+The above just explains what is happening and why was it needed
+
+you just use something like below 
+
+```
+mux.Handle("/hello", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    w.Write([]byte("hi"))
+}))
+```
+
+PASSING A NAMED FUNCTION INSTEAD OF ANONYMOUS 
+```
+func hello(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("hi"))
+}
+
+mux.Handle("/hello", http.HandlerFunc(hello))
+```
