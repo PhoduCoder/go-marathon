@@ -9,18 +9,22 @@ import (
 )
 
 type index int
-type dog struct{}
+
+// type dog struct{}
 type me struct{}
 
 var c index
-var d dog
+
+// var d dog
 var m me
 
 func (c index) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, "Index file")
 }
 
-func (d dog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+// Using HandlerFunc
+// So we didn't define dog struct and a variable, we can simply substitute any function with that signature (w http.ResponseWriter, req *http.Request)
+func dogwrite(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "Dog Index called")
 }
 
@@ -44,7 +48,7 @@ func main() {
 
 	http.Handle("/", c)
 
-	http.Handle("/dog/", d)
+	http.Handle("/dog/", http.HandlerFunc(dogwrite))
 
 	http.Handle("/me/", m)
 
