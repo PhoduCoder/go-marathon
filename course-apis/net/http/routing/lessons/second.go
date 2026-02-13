@@ -20,6 +20,8 @@ func main() {
 
 	http.HandleFunc("/me/", func(w http.ResponseWriter, req *http.Request) {
 		w.Header().Add("Content-Type", "text/html") //Otherwise we see plain-text as content type
+
+		//w.Header().Add("Content-Type", "application/json")
 		io.WriteString(w, "My Name is Gaurav")
 		tpl, err := template.ParseFiles("example.gohtml")
 		if err != nil {
