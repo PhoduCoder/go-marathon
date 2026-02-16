@@ -29,5 +29,5 @@ func myphoto(w http.ResponseWriter, req *http.Request) {
 
 func me(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-type", "text/html")
-	io.WriteString(w, `<img src="/me.jpg">`)
+	io.WriteString(w, `<h1>My Pic </h1> <img src="/me.jpg">`)
 }
