@@ -15,3 +15,7 @@ func main() {
 // 	w.Header().Set("Content-Type", "text/html")
 // 	io.WriteString(w, `<img src="adventure.jpg">`)
 // }
+
+//Note that if you have a file named index.html then
+// that file will be served
+// and you won't see the rest of directory

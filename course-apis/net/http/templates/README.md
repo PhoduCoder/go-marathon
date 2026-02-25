@@ -21,6 +21,25 @@ It takes a folder and any files inside that
 
 Eg, tpl, err := template.ParseGlobs("templates/*.gohtml" )
 
+d) Sometimes you will also see inside the init function uusing a template.Must function. 
+
+The code will loook like this 
+
+func init(){
+    tpl := template.Must(template.ParseGlob("templates/*"))
+}
+
+What template.Must takes is exactly what template.ParseGlob returns 
+which is pointer to template holding all the templates and error
+
+The templates.Must does the conditional error check for you and just returns the error.
+
+
+
+
+
+
+
 ====
 
 ```
@@ -32,3 +51,4 @@ Keep in mind, init() functions run only once before main.
 They are automatically called by Go Runtime
 
 One can define multiple init functions, they execute in the order how they were defined before the main 
+```
