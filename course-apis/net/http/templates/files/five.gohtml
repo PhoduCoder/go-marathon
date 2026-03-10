@@ -1,0 +1,20 @@
+<html>
+<head>
+<title> Sample page </title>
+</head>
+<body>
+<h1> This is my first website </h1>
+{{ range $key, $val := .}}
+<div style="background-color: {{$val}} ;">
+<table border="1">
+    <tr>
+        <th>{{$key}}</th>
+    </tr>
+    <tr>
+        <td>{{ $val }}</td>
+    </tr>    
+</table>
+</div>
+{{ end }}
+</body>
+</html>

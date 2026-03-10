@@ -5,12 +5,14 @@ a) tpl, err := template.ParseFiles("name of files")
 It is a variadic function, that accepts one or more files
 It returns a pointer to template, which is a container that holds all the files 
 
+You can also use ParseGlob
+
 b) Next run tpl.Execute(writer, data)
 you can pass a file since it implements writer interface 
 or os.Stdout 
 
 c) tpl.ExecuteTemplate( writer, name, data)
-This takes writer juust like above, but the name of the template to write to, if we use
+This takes writer just like above, but the name of the template to write to, if we use
 variadic params in ParseFiles and data 
 
 Remember data is of type interface{}, i.e. any type 
@@ -21,7 +23,7 @@ It takes a folder and any files inside that
 
 Eg, tpl, err := template.ParseGlobs("templates/*.gohtml" )
 
-d) Sometimes you will also see inside the init function uusing a template.Must function. 
+d) Sometimes you will also see inside the init function using a template.Must function. 
 
 The code will loook like this 
 

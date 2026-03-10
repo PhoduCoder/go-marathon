@@ -1,0 +1,21 @@
+<html>
+<head>
+<title> Sample page</title>
+</head>
+<body>
+<h1> This is my first website </h1>
+{{ range .}}
+<div style="background-color: lightblue;">
+<table border="1">
+    <tr>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>{{ . }}</td>
+        <td>32</td>
+    </tr>    
+</table>
+</div>
+{{ end }}
+</body>
+</html>
