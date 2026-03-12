@@ -18,7 +18,7 @@ func main() {
 	// tpl := template.Must(template.New("mytemp").Parse("This is the sample text {{ upper . }}"))
 	// tpl = tpl.Funcs(fm)
 
-	tpl := template.Must(template.New("").Funcs(fm).Parse("This is the sample text in upper case {{ upper . }} and this is in lower case {{ lower .}} \n "))
-	tpl.Execute(os.Stdout, "Gaurav")
+	tpl := template.Must(template.New("mytemp").Funcs(fm).Parse("This is the sample text in upper case {{ upper . }} and this is in lower case {{ lower .}} \n "))
+	tpl.ExecuteTemplate(os.Stdout, "mytemp", "Gaurav")
 
 }
