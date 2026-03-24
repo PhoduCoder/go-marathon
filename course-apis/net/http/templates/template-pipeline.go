@@ -17,7 +17,7 @@ var fm = template.FuncMap{
 
 func main() {
 
-	tpl := template.Must(template.New("").Funcs(fm).ParseGlob("files/*"))
+	tpl = template.Must(template.New("").Funcs(fm).ParseGlob("files/*"))
 
 	tpl.ExecuteTemplate(os.Stdout, "neuf.gohtml", time.Now())
 }
