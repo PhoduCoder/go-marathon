@@ -1,0 +1,17 @@
+<html>
+<head>
+<title> Sample page for template </title>
+</head>
+<body>
+<h1> This is my first website , this will use data from slice of struct</h1>
+<div style="background-color: lightgray ;">
+<table border="1">
+    <tr>
+      <td>
+        Date Only Time is {{dateOnly .}} | {{kitchen . }}
+      </td>
+        {{ upper (printf "Kitchen time is %s" (kitchen .)) }}    </tr>   
+</table>
+</div>
+</body>
+</html>
