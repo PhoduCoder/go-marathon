@@ -16,3 +16,6 @@ With slices it is a little different
 s := make([]int, 3) //Initialize a slice with length and capacity as 3 
 fmt.Println(s) // [0 0 0]
 ```
+
+make(map) → “create empty dictionary” 
+make([]T, n) → “create array of size n filled with zero values” 
