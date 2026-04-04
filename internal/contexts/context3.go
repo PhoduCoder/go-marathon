@@ -27,6 +27,7 @@ func main() {
 	str := "Gaurav"
 
 	// put into context
+	//passing empty struct as a best practice for key, this will nevver cause collisions across packages
 	ctx = context.WithValue(ctx, metaKey, meta)
 
 	doSomething(ctx, str)
