@@ -50,3 +50,30 @@ func main() {
 	//n.p.CurrentAge() // 1 Access the innner type CurrentAge
 
 }
+
+//
+// Either all fields named
+// Or all positional
+// Never mix
+
+//full named
+
+// person := details{
+// 	address: address{
+// 		houseNo: 310,
+// 		street:  "Tenth street",
+// 	},
+// 	fname:   "Go",
+// 	lname:   "Geek",
+// 	age:     32,
+// 	balance: 33000.203,
+// }
+
+//Full positional
+// person := details{
+// 	address{310, "Tenth street"},
+// 	"Go",
+// 	"Geek",
+// 	32,
+// 	33000.203,
+// }

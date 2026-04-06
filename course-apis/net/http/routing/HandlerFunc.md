@@ -65,6 +65,7 @@ So these three steps involved
 a) define a function which has (w ResponseWriter, r *Request) signature
 
 b) Define a new type which is a function defined with (w ResponseWriter, r *Request) signature
+
 c) then implement the serveHTTP method passing the function type as the receiver argument.
 
 d) After that use the function defined in a) in http.Handle function as a handler 

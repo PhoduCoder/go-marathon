@@ -10,6 +10,7 @@ func main() {
 	ctx := context.TODO() //Create a context
 	// The other way is to use context.Background()
 	// Both TODO and background are two ways of starting an EMPTY context
+
 	ctx_new := context.WithValue(ctx, "func_name", "main")
 	doSomething(ctx_new, str)
 }
