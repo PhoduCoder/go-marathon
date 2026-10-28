@@ -63,3 +63,24 @@ func main() {
 
 ```
 
+
+## Reference Like type 
+A Go map is a reference-like type.
+When you pass a map to a function, Go copies the map value, but that copy still refers to the same underlying map data.
+
+Copy contains a reference to the same underlying map data.
+
+```
+func change(m map[string]string) {
+    m["app"] = "Grafana"
+}
+
+func main() {
+    cache := make(map[string]string)
+    cache["app"] = "ArgoCD"
+
+    change(cache)
+
+    fmt.Println(cache["app"])
+}
+```
