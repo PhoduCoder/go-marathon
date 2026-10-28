@@ -84,3 +84,24 @@ func main() {
     fmt.Println(cache["app"])
 }
 ```
+
+
+#One more example 
+```
+func change(m map[string]string) {
+    m["app"] = "Grafana"
+    m = make(map[string]string)
+    m["app"] = "Redis"
+}
+
+func main() {
+    cache := make(map[string]string)
+    cache["app"] = "ArgoCD"
+
+    change(cache)
+
+    fmt.Println(cache["app"])
+}
+
+This prints Grafana since the map is modified, later a new local map is created 
+```
