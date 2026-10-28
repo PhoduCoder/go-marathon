@@ -19,3 +19,47 @@ fmt.Println(s) // [0 0 0]
 
 make(map) → “create empty dictionary” 
 make([]T, n) → “create array of size n filled with zero values” 
+
+
+A Go map has two states worth distinguishing:
+
+```
+var cache1 map[string]string // nil map
+cache = make(map[string]string) // initialized, empty map
+```
+
+Both have length zero, and both are fine to read from:
+But only the initialized map can be written to. Assigning into a nil map panics:
+
+A nil map has not been initialized. You can safely read from it; a missing key returns the value type’s zero value. You can also check whether a key exists with the two-value lookup. But you cannot add entries to a nil map.
+
+A map created with make is initialized and ready for entries. Both maps can be empty, but only the initialized map can be written to.
+
+
+```
+package main
+
+import "fmt"
+
+func main() {
+
+	var cache map[string]string
+
+	cache1 := make(map[string]string)
+
+	fmt.Println("From make one")
+	fmt.Println(len(cache1))
+	fmt.Println(cache1["app"] == "")
+	fmt.Println(cache1 == nil)
+	fmt.Println("This declares a map and initialized with zero values, so in case of string it is \"\" ")
+
+	fmt.Println("===============")
+	fmt.Println("From var initialized map")
+	fmt.Println(len(cache))
+	fmt.Println(cache["app"] == "")
+	fmt.Println(cache == nil)
+	fmt.Println("This declares a nil map")
+}
+
+```
+
