@@ -69,6 +69,7 @@ A Go map is a reference-like type.
 When you pass a map to a function, Go copies the map value, but that copy still refers to the same underlying map data.
 
 Copy contains a reference to the same underlying map data.
+passing a map copies its map value, but both copies initially refer to the same underlying data.
 
 ```
 func change(m map[string]string) {
